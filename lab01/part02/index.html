@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      div {
+        margin: 100px;
+      }
+      svg {
+        fill: red;
+        stroke: black;
+        stroke-width: 1;
+      }
+      text,
+      math,
+      mo,
+      mi {
+        font-size: 20px;
+      }
+      canvas{
+        border: 5px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div width="500" height="500">
+      <svg width="200" height="350">
+        <text x="60" y="140" fill="black">a</text>
+
+        <polygon points="150,0 150,300 0,300 150,0" />
+        <text x="170" y="150" fill="black">b</text>
+        <text x="75" y="320" fill="black">c</text>
+      </svg>
+    </div>
+    <div>
+      <math>
+        <mi>c</mi>
+
+        <mo>=</mo>
+        <msqrt>
+          <msup align="right">
+            <mi>a</mi>
+            <mn>2</mn>
+          </msup>
+
+          <mo>+</mo>
+          <msup align="right">
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+        </msqrt>
+      </math>
+    </div>
+    <div>
+      <canvas id="myCanvas" width="400px" height="400px" >
+
+      </canvas>
+    </div>
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      let intervalid=setInterval(drawLine,100);
+
+      ctx.moveTo(0, 0);
+      ctx.lineWidth = 8;
+      var x=0,y=0;
+      
+      function drawLine(){
+        
+        ctx.lineTo(x+=10, y+=10);
+        ctx.stroke();
+        ctx.strokeStyle ="red";
+        if(x>400 || y>400){
+          clearInterval(intervalid);
+          
+          alert("animation end");
+        }
+        
+
+      }
+    </script>
+  </body>
+</html>

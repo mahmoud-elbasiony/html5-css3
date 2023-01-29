@@ -1,0 +1,70 @@
+body{
+    height: 1000px;
+    padding: 20px;
+}
+img {
+    width: 300px;
+    height: auto;
+    transition: 3s;
+  }
+  img:hover {
+    opacity: 0.3;
+    transition: 3s;
+  }
+  button{
+    width: 170px;
+    height: 30px;
+    border-radius:15px;
+    border:2px solid black;
+    
+  }
+  button:hover{
+    animation: blink 3s infinite forwards;
+  }
+  @keyframes blink{
+    25%{
+        border:2px solid red;
+        background-color: aqua;
+    }
+    75%{
+        border:2px solid aqua;
+        background-color: red;
+    }
+  }
+  #email,#userName{
+    height: 20px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+
+  }
+  #email:valid{
+    border: 2px solid green;
+  }
+  #userName:valid{
+    border: 2px solid green;
+    
+  }
+  p{
+    margin: 0 5px 5px;
+    
+  }
+  #email:valid + p{
+   display: none;
+  }
+  #userName:valid + p{
+   display: none;
+  }
+  
+  #email:invalid{
+    border: 2px solid red;
+    
+  }
+  #userName:invalid{
+    border: 2px solid red;
+  }
+  button{
+    margin: 30px;
+  }
