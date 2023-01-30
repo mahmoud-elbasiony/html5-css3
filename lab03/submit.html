@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            padding: 15px;
+        }
+      #email,
+      #userName {
+        height: 20px;
+        width: 200px;
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        outline: none;
+        margin-top: 5px;
+      }
+      #email:valid,
+      #userName:valid {
+        border: 2px solid green;
+      }
+
+      p {
+        margin: 0 5px 15px;
+      }
+      #email:valid + p,
+      #userName:valid + p {
+        display: none;
+      }
+
+      #email:invalid,
+      #userName:invalid {
+        border: 2px solid red;
+      }
+
+      button {
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="welcome.html">
+      <div>
+        <label for="userName">user name:</label><br />
+        <input
+          type="text"
+          name="userName"
+          id="userName"
+          pattern="[A-Za-z].{8,20}"
+          placeholder="user name"
+          required
+        />
+        <p id="pUserUame">
+          the required user name may only be series of alphabetical characters.
+        </p>
+      </div>
+
+      <div>
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          name="email"
+          pattern="[A-Za-z0-9\.-\.]+@[a-z]+\.[a-z]{2,}$"
+          id="email"
+          placeholder="Email"
+          required
+        />
+        <p id="pEmail">
+          the required Email may not include any special characters other than
+          the @ sign.
+        </p>
+      </div>
+      <input type="submit" value="submit" onclick="add()"/>
+    </form>
+    <script>
+        function add(){
+            if(true){
+                localStorage.setItem("Email",document.getElementById("email").value)
+                localStorage.setItem("UserName",document.getElementById("userName").value)
+            }
+
+        }
+        
+
+    </script>
+  </body>
+</html>
