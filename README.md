@@ -1,6 +1,6 @@
 # html5-css3
 ## lab01
-> <a href="https://mahmoud-elbasiony.github.io/html5-css3/lab01/part01/colors.html" target="blank">colors slider</a>
+> <a href="https://mahmoud-elbasiony.github.io/html5-css3/lab01/part01/colors.html" target="_blank">colors slider</a>
 
 > <a href="https://mahmoud-elbasiony.github.io/html5-css3/lab01/part01/part01.html" target="_blank">video player</a>
 
